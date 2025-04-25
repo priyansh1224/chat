@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumina Chat</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Connection Panel -->
+        <div class="connection-panel glass">
+            <div class="app-header">
+                <div class="logo">
+                    <i class="fas fa-comment-dots"></i>
+                    <h1>Lumina Chat</h1>
+                </div>
+                <div class="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </div>
+            </div>
+            
+            <div class="connection-form">
+                <div class="form-group">
+                    <label>Your ID</label>
+                    <div class="input-with-copy">
+                        <input type="text" id="your-id" readonly>
+                        <button class="copy-btn" id="copy-id">
+                            <i class="far fa-copy"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Friend's ID</label>
+                    <input type="text" id="peer-id" placeholder="Enter friend's ID">
+                </div>
+                
+                <button class="connect-btn" id="connect-btn">
+                    <span>Connect</span>
+                    <i class="fas fa-plug"></i>
+                </button>
+                
+                <div class="connection-status" id="connection-status">
+                    <div class="status-dot"></div>
+                    <span>Disconnected</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Chat Container -->
+        <div class="chat-container glass">
+            <div class="chat-header">
+                <div class="chat-partner">
+                    <div class="avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="partner-info">
+                        <h3 id="partner-name">Friend</h3>
+                        <p id="partner-status">Offline</p>
+                    </div>
+                </div>
+                <div class="chat-actions">
+                    <button class="action-btn">
+                        <i class="fas fa-ellipsis-v"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="chat-messages" id="chat-messages">
+                <!-- Messages will appear here -->
+                <div class="welcome-message">
+                    <i class="fas fa-comments"></i>
+                    <h3>Start your conversation</h3>
+                    <p>Connect with a friend to begin chatting</p>
+                </div>
+            </div>
+            
+            <div class="chat-input">
+                <div class="input-container">
+                    <input type="text" id="message-input" placeholder="Type your message...">
+                    <button class="send-btn" id="send-button">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/peerjs@1.4.7/dist/peerjs.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
